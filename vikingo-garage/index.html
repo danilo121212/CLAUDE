@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikingo Garage | Estética Vehicular Premium en Córdoba</title>
+<meta name="description" content="Tratamientos Nano Cerámicos, Vidrio Líquido, Pulido y Protección de 0km. Servicio premium de detallado automotriz en Córdoba, Argentina.">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;
+  --bg-panel:#111118;
+  --bg-card:#16161f;
+  --accent:#c4371a;
+  --accent-hover:#e04428;
+  --accent-muted:rgba(196,55,26,.15);
+  --gold:#c8a45a;
+  --gold-muted:rgba(200,164,90,.12);
+  --text:#f0ede8;
+  --text-secondary:#8a8694;
+  --text-dim:#5a5666;
+  --border:rgba(255,255,255,.06);
+  --radius:12px;
+  --shadow:0 4px 30px rgba(0,0,0,.4);
+  --transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* --- NAV --- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:var(--transition);backdrop-filter:blur(0)}
+.nav.scrolled{background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
+.nav-logo svg{width:40px;height:40px}
+.nav-logo span{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.05em;text-transform:uppercase}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.03em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;padding:.6rem 1.4rem;border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:.02em;transition:var(--transition)}
+.nav-cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
+@media(max-width:768px){.nav-links{display:none}.nav{padding:1rem}}
+
+/* --- HERO --- */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:6rem 2rem 4rem}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 20% 80%,rgba(196,55,26,.12),transparent 70%),
+  radial-gradient(ellipse 60% 50% at 80% 20%,rgba(200,164,90,.08),transparent 60%),
+  rgba(10,10,15,.35);z-index:0}
+.hero-hex{position:absolute;inset:0;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66ZM28 100L0 84L0 50L28 34L56 50L56 84L28 100Z' fill='none' stroke='%23ffffff' stroke-width='.5'/%3E%3C/svg%3E");z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:800px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold-muted);border:1px solid rgba(200,164,90,.2);padding:.4rem 1rem;border-radius:50px;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:500;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:1.5rem}
+.hero h1 .accent{color:var(--accent);display:block;font-size:.55em;font-weight:500;letter-spacing:.08em;margin-top:.3rem}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text-secondary);max-width:520px;margin:0 auto 2.5rem;font-weight:300;line-height:1.7}
+.hero-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 2rem;border-radius:10px;font-size:.95rem;font-weight:600;text-decoration:none;transition:var(--transition);cursor:pointer;border:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(196,55,26,.3)}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+.btn-secondary:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04)}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border)}
+.hero-stat{text-align:center}
+.hero-stat .num{font-family:'Oswald',sans-serif;font-size:2rem;font-weight:600;color:var(--text)}
+.hero-stat .label{font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+@media(max-width:768px){.hero-stats{gap:2rem}.hero-stat .num{font-size:1.5rem}}
+
+/* --- SECTIONS --- */
+section{padding:6rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.75rem}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1;margin-bottom:1rem}
+.section-desc{color:var(--text-secondary);max-width:560px;font-weight:300;line-height:1.7;font-size:1.05rem}
+
+/* --- SERVICES --- */
+.services{background:rgba(10,10,15,.82)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:var(--transition);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--gold));opacity:0;transition:opacity .3s}
+.service-card:hover{border-color:rgba(255,255,255,.1);transform:translateY(-4px);box-shadow:var(--shadow)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:48px;height:48px;background:var(--accent-muted);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.service-icon svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.service-card h3{font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.6rem}
+.service-card p{color:var(--text-secondary);font-size:.9rem;line-height:1.65;font-weight:300}
+.service-tag{display:inline-block;margin-top:1rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--gold);background:var(--gold-muted);padding:.25rem .6rem;border-radius:4px;letter-spacing:.05em;text-transform:uppercase}
+
+/* --- PROCESS --- */
+.process{background:rgba(17,17,24,.85)}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:3rem}
+.step{text-align:center;padding:1.5rem}
+.step-num{font-family:'Oswald',sans-serif;font-size:3rem;font-weight:700;color:var(--accent);opacity:.3;line-height:1;margin-bottom:.75rem}
+.step h3{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.5rem}
+.step p{color:var(--text-secondary);font-size:.85rem;font-weight:300;line-height:1.6}
+
+/* --- WHY US --- */
+.why{background:rgba(10,10,15,.82)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem;align-items:center}
+.why-visual{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:3rem;text-align:center;position:relative;overflow:hidden}
+.why-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 70%,rgba(196,55,26,.08),transparent 60%);pointer-events:none}
+.why-visual .big-num{font-family:'Oswald',sans-serif;font-size:5rem;font-weight:700;color:var(--accent);line-height:1}
+.why-visual .big-label{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;color:var(--text-secondary)}
+.why-visual .big-sub{font-size:.9rem;color:var(--text-dim);margin-top:.75rem;font-weight:300}
+.why-list{display:flex;flex-direction:column;gap:1.5rem}
+.why-item{display:flex;gap:1rem;align-items:flex-start}
+.why-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:.45rem}
+.why-item h4{font-family:'Oswald',sans-serif;font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.25rem}
+.why-item p{color:var(--text-secondary);font-size:.88rem;font-weight:300;line-height:1.6}
+@media(max-width:768px){.why-grid{grid-template-columns:1fr}}
+
+/* --- GALLERY --- */
+.gallery{background:rgba(17,17,24,.85)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:3rem;border-radius:var(--radius);overflow:hidden}
+.gallery-item{aspect-ratio:1;background:var(--bg-card);position:relative;overflow:hidden;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,15,.7),transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:1rem}
+.gallery-item:hover .overlay{opacity:1}
+.gallery-item .overlay span{font-family:'Oswald',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
+.gallery-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;color:var(--text-dim);font-size:.8rem}
+.gallery-placeholder svg{width:32px;height:32px;stroke:var(--text-dim);fill:none;stroke-width:1.5}
+@media(max-width:768px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* --- CTA BANNER --- */
+.cta-banner{background:linear-gradient(135deg,rgba(196,55,26,.9),rgba(139,26,10,.9));padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66ZM28 100L0 84L0 50L28 34L56 50L56 84L28 100Z' fill='none' stroke='%23ffffff' stroke-width='.5'/%3E%3C/svg%3E")}
+.cta-banner h2{font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;text-transform:uppercase;margin-bottom:1rem;position:relative}
+.cta-banner p{font-size:1.1rem;color:rgba(255,255,255,.8);max-width:500px;margin:0 auto 2rem;font-weight:300;position:relative}
+.cta-banner .btn-primary{background:#fff;color:var(--accent);font-size:1.05rem;padding:1rem 2.5rem;position:relative}
+.cta-banner .btn-primary:hover{background:#f0ede8;transform:translateY(-2px);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+
+/* --- CONTACT --- */
+.contact{background:rgba(10,10,15,.88)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem}
+.contact-info{display:flex;flex-direction:column;gap:2rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start}
+.contact-item-icon{width:44px;height:44px;background:var(--accent-muted);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.contact-item h4{font-family:'Oswald',sans-serif;font-size:.95rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.2rem}
+.contact-item p{color:var(--text-secondary);font-size:.88rem;font-weight:300}
+.contact-item a{color:var(--accent);text-decoration:none;transition:color .3s}
+.contact-item a:hover{color:var(--accent-hover)}
+.contact-map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);min-height:300px}
+.contact-map iframe{width:100%;height:100%;min-height:300px;border:0;filter:grayscale(.8) invert(.92) contrast(1.1);border-radius:var(--radius)}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+
+/* --- FOOTER --- */
+footer{background:rgba(17,17,24,.92);border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center}
+footer p{color:var(--text-dim);font-size:.8rem}
+footer a{color:var(--text-secondary);text-decoration:none;transition:color .3s}
+footer a:hover{color:var(--text)}
+
+/* --- FULLPAGE VIDEO BG --- */
+.video-bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--bg)}
+.video-bg video{width:100%;height:100%;object-fit:cover}
+.video-bg-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,15,.1) 0%,rgba(10,10,15,.05) 50%,rgba(10,10,15,.15) 100%);pointer-events:none}
+.scrub-progress-bar{position:fixed;bottom:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold));width:0%;z-index:101;transition:width .05s linear}
+.page-content{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.video-bg{display:none}.scrub-progress-bar{display:none}}
+
+/* --- SCROLL ANIMATIONS --- */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-up:nth-child(2){transition-delay:.1s}
+.fade-up:nth-child(3){transition-delay:.2s}
+.fade-up:nth-child(4){transition-delay:.25s}
+.fade-up:nth-child(5){transition-delay:.3s}
+.fade-up:nth-child(6){transition-delay:.35s}
+
+/* --- WHATSAPP FLOAT --- */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:var(--transition);text-decoration:none}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M20 8l-3 4h-4l1.5 5L10 22l5 1 2.5 5 2.5-5 2.5 5 2.5-5 5-1-4.5-5L27 12h-4L20 8z" fill="currentColor"/>
+      <path d="M13 10l-2-3M27 10l2-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <span>Vikingo Garage</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/5493512668333?text=Hola%2C%20quiero%20cotizar%20un%20tratamiento%20para%20mi%20auto" class="nav-cta" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.932 1.396 5.608L0 24l6.545-1.374A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.872 0-3.632-.509-5.145-1.396l-.369-.218-3.823.802.84-3.772-.24-.382A9.768 9.768 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/></svg>
+    Cotizar
+  </a>
+</nav>
+
+<!-- FULLPAGE VIDEO BACKGROUND -->
+<div class="video-bg">
+  <video id="scrub-video" muted playsinline preload="auto" poster="assets/hero-poster.jpg">
+    <source src="assets/hero-scrub.mp4" type="video/mp4">
+  </video>
+  <div class="video-bg-overlay"></div>
+</div>
+<div class="scrub-progress-bar" id="scrub-bar"></div>
+
+<div class="page-content">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-hex"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Cordoba, Argentina</div>
+    <h1>Tu auto merece<br>manos vikingas
+      <span class="accent">Estetica vehicular premium</span>
+    </h1>
+    <p class="hero-sub">Tratamientos Nano Ceramicos y Vidrio Liquido que protegen, brillan y duran. Porque un 0km se cuida desde el primer dia.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5493512668333?text=Hola%2C%20quiero%20cotizar%20un%20tratamiento%20para%20mi%20auto" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.932 1.396 5.608L0 24l6.545-1.374A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.872 0-3.632-.509-5.145-1.396l-.369-.218-3.823.802.84-3.772-.24-.382A9.768 9.768 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/></svg>
+        Cotiza tu presupuesto
+      </a>
+      <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" data-target="32000">0</div><div class="label">Seguidores</div></div>
+      <div class="hero-stat"><div class="num" data-target="1500">0</div><div class="label">Trabajos</div></div>
+      <div class="hero-stat"><div class="num" data-target="8">0</div><div class="label">Anos de exp.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-label fade-up">Lo que hacemos</div>
+    <h2 class="section-title fade-up">Servicios Premium</h2>
+    <p class="section-desc fade-up">Cada tratamiento esta pensado para proteger tu inversion y mantener tu auto impecable por mas tiempo.</p>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Nano Ceramico</h3>
+        <p>Proteccion de larga duracion que repele el agua, la suciedad y los rayos UV. Tu pintura queda blindada con un acabado de salon.</p>
+        <span class="service-tag">Mas pedido</span>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Vidrio Liquido</h3>
+        <p>Capa invisible de proteccion extrema. El agua resbala, el polvo no se adhiere, y la pintura se mantiene como recien sacada de la agencia.</p>
+        <span class="service-tag">Durabilidad maxima</span>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Proteccion de 0km</h3>
+        <p>Tu auto nuevo merece proteccion desde el dia uno. Tratamiento completo que preserva el valor de reventa y el brillo original.</p>
+        <span class="service-tag">0km</span>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 00-6 6c0 6 6 12 6 12s6-6 6-12a6 6 0 00-6-6z"/><circle cx="12" cy="9" r="2"/></svg>
+        </div>
+        <h3>Pulido Profesional</h3>
+        <p>Eliminamos rayaduras, marcas de lavado y oxidacion. Recuperamos el brillo de fabrica con pulidoras de doble accion y pastas profesionales.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Pulido de Opticas</h3>
+        <p>Opticas amarillas y opacas reducen la visibilidad y envejecen tu auto. Las dejamos transparentes como nuevas, sin cambiarlas.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Microbollos</h3>
+        <p>Reparacion de abolladuras menores sin pintura. Granizo, puertas de estacionamiento, golpes leves. Vuelve a su forma original.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="process" id="proceso">
+  <div class="container">
+    <div class="section-label fade-up">Paso a paso</div>
+    <h2 class="section-title fade-up">Como trabajamos</h2>
+    <p class="section-desc fade-up">Un proceso simple para vos, profesional por dentro.</p>
+    <div class="process-steps">
+      <div class="step fade-up">
+        <div class="step-num">01</div>
+        <h3>Cotizas por WhatsApp</h3>
+        <p>Nos contas que auto tenes y que necesitas. Te pasamos presupuesto en minutos, sin vueltas.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">02</div>
+        <h3>Traes tu auto</h3>
+        <p>Coordinamos dia y hora. Lo recibimos en nuestro taller de Republica 1381 y evaluamos el estado.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">03</div>
+        <h3>Trabajamos</h3>
+        <p>Aplicamos el tratamiento con productos premium y tecnicas profesionales. Te mandamos fotos del proceso.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">04</div>
+        <h3>Lo retiras impecable</h3>
+        <p>Tu auto sale protegido, brillante y con garantia. Listo para disfrutar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE NOSOTROS -->
+<section class="why" id="nosotros">
+  <div class="container">
+    <div class="section-label fade-up">Por que elegirnos</div>
+    <h2 class="section-title fade-up">No somos un lavadero.<br>Somos vikingos.</h2>
+    <div class="why-grid">
+      <div class="why-visual fade-up">
+        <div class="big-num">32K</div>
+        <div class="big-label">Seguidores</div>
+        <div class="big-sub">La comunidad de detailing mas grande de Cordoba nos respalda.</div>
+      </div>
+      <div class="why-list">
+        <div class="why-item fade-up">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Productos de primera linea</h4>
+            <p>Usamos solo productos nano ceramicos y de vidrio liquido de marcas lideres. Nada generico, nada improvisado.</p>
+          </div>
+        </div>
+        <div class="why-item fade-up">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Proceso transparente</h4>
+            <p>Te mostramos todo: antes, durante y despues. Nuestro Instagram con 1500 trabajos publicados es nuestra carta de presentacion.</p>
+          </div>
+        </div>
+        <div class="why-item fade-up">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Garantia real</h4>
+            <p>Cada tratamiento tiene garantia. Si algo no queda perfecto, lo corregimos sin costo extra.</p>
+          </div>
+        </div>
+        <div class="why-item fade-up">
+          <div class="why-dot"></div>
+          <div>
+            <h4>Especialistas en 0km</h4>
+            <p>Tu auto recien comprado necesita proteccion inmediata. Somos referentes en tratamiento de vehiculos nuevos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="section-label fade-up">Nuestro trabajo</div>
+    <h2 class="section-title fade-up">Galeria</h2>
+    <p class="section-desc fade-up">Cada auto que sale del taller es una prueba de lo que hacemos. Estos son algunos de nuestros trabajos.</p>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item"><img src="assets/taller-interior.jpeg" alt="Interior del taller Vikingo Garage con luces LED hexagonales" loading="lazy"><div class="overlay"><span>Interior del taller</span></div></div>
+      <div class="gallery-item"><img src="assets/ceramico-aplicacion.jpeg" alt="Aplicacion de tratamiento nano ceramico" loading="lazy"><div class="overlay"><span>Nano Ceramico</span></div></div>
+      <div class="gallery-item"><img src="assets/suv-estudio.jpg" alt="SUV blanca en estudio de detailing profesional" loading="lazy"><div class="overlay"><span>Detailing Premium</span></div></div>
+      <div class="gallery-item"><img src="assets/pulido-opticas.jpg" alt="Pulido profesional de opticas" loading="lazy"><div class="overlay"><span>Pulido de Opticas</span></div></div>
+      <div class="gallery-item"><img src="assets/pulido-profesional.jpg" alt="Tecnico realizando pulido profesional" loading="lazy"><div class="overlay"><span>Pulido Profesional</span></div></div>
+      <div class="gallery-item"><img src="assets/taller-exterior.jpg" alt="Vista exterior del taller de noche" loading="lazy"><div class="overlay"><span>Nuestro Taller</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2 class="fade-up">Tu auto no espera.<br>Cotiza ahora.</h2>
+    <p class="fade-up">Mandanos un mensaje y en minutos tenes tu presupuesto. Sin compromiso, sin vueltas.</p>
+    <a href="https://wa.me/5493512668333?text=Hola%2C%20quiero%20cotizar%20un%20tratamiento%20para%20mi%20auto" class="btn btn-primary fade-up" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.932 1.396 5.608L0 24l6.545-1.374A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.872 0-3.632-.509-5.145-1.396l-.369-.218-3.823.802.84-3.772-.24-.382A9.768 9.768 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/></svg>
+      Hablar por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="section-label fade-up">Encontranos</div>
+    <h2 class="section-title fade-up">Contacto</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item fade-up">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Direccion</h4>
+            <p>Republica 1381, Cordoba, Argentina 5000</p>
+          </div>
+        </div>
+        <div class="contact-item fade-up">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p><a href="https://wa.me/5493512668333" target="_blank" rel="noopener">+54 9 351 266 8333</a></p>
+          </div>
+        </div>
+        <div class="contact-item fade-up">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+          </div>
+          <div>
+            <h4>Instagram</h4>
+            <p><a href="https://www.instagram.com/vikingo_garage_cordoba/" target="_blank" rel="noopener">@vikingo_garage_cordoba</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-map fade-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.8!2d-64.19!3d-31.42!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI1JzEyLjAiUyA2NMKwMTEnMjQuMCJX!5e0!3m2!1ses!2sar!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Vikingo Garage. Todos los derechos reservados. | <a href="https://www.instagram.com/vikingo_garage_cordoba/" target="_blank" rel="noopener">@vikingo_garage_cordoba</a></p>
+  </div>
+</footer>
+
+</div><!-- /page-content -->
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5493512668333?text=Hola%2C%20quiero%20cotizar%20un%20tratamiento%20para%20mi%20auto" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.025.507 3.932 1.396 5.608L0 24l6.545-1.374A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.872 0-3.632-.509-5.145-1.396l-.369-.218-3.823.802.84-3.772-.24-.382A9.768 9.768 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/></svg>
+</a>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, {passive: true});
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Counter animation
+function animateCounters() {
+  document.querySelectorAll('[data-target]').forEach(el => {
+    const target = +el.dataset.target;
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      if (target >= 1000) {
+        el.textContent = (current / 1000).toFixed(current >= 10000 ? 0 : 1) + 'K';
+      } else {
+        el.textContent = current + '+';
+      }
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  });
+}
+const statsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { animateCounters(); statsObs.disconnect(); }
+  });
+}, {threshold: 0.5});
+document.querySelectorAll('.hero-stats').forEach(el => statsObs.observe(el));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+  });
+});
+
+// Fullpage scroll-driven video
+(function() {
+  const video = document.getElementById('scrub-video');
+  if (!video) return;
+  const bar = document.getElementById('scrub-bar');
+  let seekBusy = false;
+  let pendingTime = null;
+  let ticking = false;
+
+  video.addEventListener('seeked', () => {
+    seekBusy = false;
+    if (pendingTime !== null) {
+      video.currentTime = pendingTime;
+      pendingTime = null;
+      seekBusy = true;
+    }
+  });
+  video.addEventListener('error', () => { seekBusy = false; pendingTime = null; });
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      const progress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+
+      if (video.duration && isFinite(video.duration)) {
+        const targetTime = progress * video.duration;
+        const delta = Math.abs(video.currentTime - targetTime);
+        if (delta > 0.05) {
+          if (!seekBusy) {
+            video.currentTime = targetTime;
+            seekBusy = true;
+          } else {
+            pendingTime = targetTime;
+          }
+        }
+      }
+
+      if (bar) bar.style.width = (progress * 100) + '%';
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, {passive: true});
+  video.addEventListener('loadedmetadata', () => { video.currentTime = 0; onScroll(); });
+  if (video.readyState >= 1) onScroll();
+})();
+</script>
+</body>
+</html>
